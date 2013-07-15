@@ -12,10 +12,10 @@ if Spree.user_class
       save!
     end
     
-    def generate_product_key!
-      self.product_key = SecureRandom.hex(24)
-      save!
-    end
+    # def generate_product_key
+    #   self.product_key = SecureRandom.hex(24)
+    #   save!
+    # end
     
     def reset_activation_count
       self.activation_count = 0

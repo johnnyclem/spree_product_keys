@@ -1,5 +1,10 @@
 Spree::Admin::UsersController.class_eval do
 
+  def generate_product_key
+    user.product_key = SecureRandom.hex(24)
+    user.save!
+  end
+
   private
 
   def user
