@@ -2,16 +2,11 @@ Spree::Admin::UsersController.class_eval do
 
   def generate_product_key
     user.product_key = SecureRandom.hex(24)
-    user.save!
-    update_user
-  end
-  
-  def update_user
-    authorize! :update, user
-    if user.update_attributes(params[:user])
-      respond_with(user, :status => 200, :default_template => :edit)
+    if user.save!
+      flash[:success] = Spree.t('customer_details_updated')
+      redirect_to edit_admin_user_path(user)
     else
-      invalid_resource!(user)
+      render :action => :edit
     end
   end
 
