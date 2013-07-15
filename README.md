@@ -1,7 +1,7 @@
 SpreeProductKeys
 ================
 
-Introduction goes here.
+Simple product key activation and validation for Spree Commerce (not ready for production).
 
 Installation
 ------------
@@ -37,4 +37,4 @@ Simply add this require statement to your spec_helper:
 require 'spree_product_keys/factories'
 ```
 
-Copyright (c) 2013 [name of extension creator], released under the New BSD License
+Copyright (c) 2013 John Clem, released under the MIT License
